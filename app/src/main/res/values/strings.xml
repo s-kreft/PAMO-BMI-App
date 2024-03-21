@@ -2,4 +2,5 @@
     <string name="app_name">PAMO_BMI_App</string>
     <string name="weight">Your Weight</string>
     <string name="height">Your Heigt</string>
+    <string name="bmi">Your BMI</string>
 </resources>

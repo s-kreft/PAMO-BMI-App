@@ -3,6 +3,7 @@ package com.example.pamo_bmi_app;
 import android.os.Bundle;
 import android.text.Editable;
 import android.text.TextWatcher;
+import android.util.Log;
 import android.widget.EditText;
 import android.widget.TextView;
 
@@ -31,17 +32,28 @@ public class MainActivity extends AppCompatActivity {
         weightTextView = (TextView) findViewById(R.id.weightTextView);
         heightTextView = (TextView) findViewById(R.id.heightTextView);
         bmiTextView = (TextView) findViewById(R.id.bmiTextView);
-        EditText weightEditText = (EditText) findViewById(R.id.weightTextView);
+        weightTextView.setText(numberFormat.format(0.0));
+        heightTextView.setText(numberFormat.format(0.0));
+        bmiTextView.setText(numberFormat.format(0.0));
+
+        EditText weightEditText = (EditText) weightTextView;
         weightEditText.addTextChangedListener(weightEditTextWatcher);
 
-        EditText heightEditText = (EditText) findViewById(R.id.heightTextView);
+        EditText heightEditText = (EditText) heightTextView;
         heightEditText.addTextChangedListener(heightEditTextWatcher);
     }
     private void calculate() {
-        double bmiValue = (weightValue / Math.sqrt(heightValue));
-
-        bmiTextView.setText(numberFormat.format(bmiValue));
+        try {
+            double exponent = 2;
+            double bmiValue = (weightValue / Math.pow(heightValue, exponent));
+            bmiTextView.setText(numberFormat.format(bmiValue));
+        }
+        catch (Exception ex)
+        {
+            Log.e("x", ex.getMessage());
+        }
     }
+
 
     private final TextWatcher weightEditTextWatcher = new TextWatcher() {
         @Override
@@ -50,18 +62,20 @@ public class MainActivity extends AppCompatActivity {
         @Override
         public void onTextChanged(CharSequence s, int start, int before, int count) {
             try {
-                weightTextView.setText(numberFormat.format(weightValue));
+                String text = s.toString();
+                weightValue = Double.parseDouble(text);
+                calculate();
             }
-            catch (NumberFormatException e) {
-                weightTextView.setText("");
-                weightValue = 0.0;
+            catch (Exception ex) {
+                Log.e("x", ex.getMessage());
             }
-            calculate();
         }
         @Override
         public void afterTextChanged(Editable s) {
         }
     };
+
+
     private final TextWatcher heightEditTextWatcher = new TextWatcher() {
         @Override
         public void beforeTextChanged(CharSequence s, int start, int count, int after) {
@@ -69,13 +83,13 @@ public class MainActivity extends AppCompatActivity {
         @Override
         public void onTextChanged(CharSequence s, int start, int before, int count) {
             try {
-                heightTextView.setText(numberFormat.format(heightValue));
+                String text = s.toString();
+                heightValue = Double.parseDouble(text);
+                calculate();
             }
-            catch (NumberFormatException e) {
-                heightTextView.setText("");
-                heightValue= 0.0;
+            catch (Exception ex) {
+                Log.e("x", ex.getMessage());
             }
-            calculate();
         }
         @Override
         public void afterTextChanged(Editable s) {
