@@ -1,0 +1,3 @@
+# PAMO
+
+## Autor - Sebastian Kreft
