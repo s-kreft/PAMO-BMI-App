@@ -12,6 +12,7 @@ import androidx.appcompat.app.AppCompatActivity;
 
 import java.text.NumberFormat;
 
+
 public class MainActivity extends AppCompatActivity {
 
     private static final NumberFormat numberFormat = NumberFormat.getNumberInstance();
