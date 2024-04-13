@@ -22,4 +22,9 @@
         android:name="com.example.lab2.ui.notifications.NotificationsFragment"
         android:label="@string/title_notifications"
         tools:layout="@layout/fragment_notifications" />
+    <fragment
+        android:id="@+id/navigation_bmi_calculations"
+        android:name="com.example.lab2.ui.bmi_calculations.BmiCalculationsFragment"
+        android:label="fragment_bmi_calculations"
+        tools:layout="@layout/fragment_bmi_calculations" />
 </navigation>
