@@ -17,7 +17,6 @@ import androidx.fragment.app.Fragment;
 import androidx.lifecycle.ViewModelProvider;
 
 import com.example.lab2.databinding.FragmentBmiCalculationsBinding;
-import com.example.lab2.databinding.FragmentDashboardBinding;
 import com.example.lab2.R;
 
 
@@ -50,8 +49,7 @@ public class BmiCalculationsFragment extends Fragment {
     @Override
     public void onActivityCreated(@Nullable Bundle savedInstanceState) {
         super.onActivityCreated(savedInstanceState);
-//        mViewModel = new ViewModelProvider(this).get(BmiCalculationsViewModel.class);
-        // TODO: Use the ViewModel
+
         weightTextView = (TextView) getView().findViewById(R.id.weightTextView);
         heightTextView = (TextView) getView().findViewById(R.id.heightTextView);
         bmiTextView = (TextView) getView().findViewById(R.id.bmiTextView);

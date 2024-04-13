@@ -1,10 +1,11 @@
 <resources>
     <string name="app_name">BMI App</string>
     <string name="title_home">Home</string>
-    <string name="title_dashboard">Dashboard</string>
-    <string name="title_notifications">Notifications</string>
+    <string name="title_recipes">Rekomendowany Przepis</string>
+    <string name="title_benedict">Ile możesz zjeść kalorii</string>
     <string name="title_bmi_calculations">BMI Calculations</string>
     <string name="weight">Your Weight</string>
     <string name="height">Your Heigt</string>
     <string name="bmi">Your BMI</string>
+    <string name="image_desc">Image</string>
 </resources>

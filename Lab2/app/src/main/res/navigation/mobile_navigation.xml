@@ -12,16 +12,16 @@
         tools:layout="@layout/fragment_home" />
 
     <fragment
-        android:id="@+id/navigation_dashboard"
-        android:name="com.example.lab2.ui.dashboard.DashboardFragment"
-        android:label="@string/title_dashboard"
-        tools:layout="@layout/fragment_dashboard" />
+        android:id="@+id/navigation_recipes"
+        android:name="com.example.lab2.ui.Recipes.RecipesFragment"
+        android:label="@string/title_recipes"
+        tools:layout="@layout/fragment_recipes" />
 
     <fragment
-        android:id="@+id/navigation_notifications"
-        android:name="com.example.lab2.ui.notifications.NotificationsFragment"
-        android:label="@string/title_notifications"
-        tools:layout="@layout/fragment_notifications" />
+        android:id="@+id/navigation_benedict"
+        android:name="com.example.lab2.ui.notifications.BenedictFragment"
+        android:label="@string/title_benedict"
+        tools:layout="@layout/fragment_benedict" />
     <fragment
         android:id="@+id/navigation_bmi_calculations"
         android:name="com.example.lab2.ui.bmi_calculations.BmiCalculationsFragment"
