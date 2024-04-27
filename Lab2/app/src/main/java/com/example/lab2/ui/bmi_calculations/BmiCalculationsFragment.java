@@ -18,6 +18,7 @@ import androidx.lifecycle.ViewModelProvider;
 
 import com.example.lab2.databinding.FragmentBmiCalculationsBinding;
 import com.example.lab2.R;
+import com.example.lab2.service.BmiAppService;
 
 
 import java.text.NumberFormat;
@@ -33,6 +34,7 @@ public class BmiCalculationsFragment extends Fragment {
     private TextView bmiTextView;
 
     private FragmentBmiCalculationsBinding binding;
+     private BmiAppService bmiCalculationFormula = new BmiAppService();
 
     public View onCreateView(@NonNull LayoutInflater inflater,
                              ViewGroup container, Bundle savedInstanceState) {
@@ -66,8 +68,7 @@ public class BmiCalculationsFragment extends Fragment {
 
     private void calculate() {
         try {
-            double exponent = 2;
-            double bmiValue = (weightValue / Math.pow(heightValue, exponent));
+            double bmiValue = bmiCalculationFormula.bmiCalculation(weightValue, heightValue);
             bmiTextView.setText(numberFormat.format(bmiValue));
         }
         catch (Exception ex)
