@@ -2,6 +2,8 @@ package com.example.lab2;
 
 import android.os.Bundle;
 
+import com.example.lab2.products.Product;
+import com.example.lab2.products.RecyclerAdapter;
 import com.google.android.material.bottomnavigation.BottomNavigationView;
 
 import androidx.appcompat.app.AppCompatActivity;
@@ -9,12 +11,19 @@ import androidx.navigation.NavController;
 import androidx.navigation.Navigation;
 import androidx.navigation.ui.AppBarConfiguration;
 import androidx.navigation.ui.NavigationUI;
+import androidx.recyclerview.widget.DefaultItemAnimator;
+import androidx.recyclerview.widget.LinearLayoutManager;
+import androidx.recyclerview.widget.RecyclerView;
 
 import com.example.lab2.databinding.ActivityMainBinding;
+
+import java.util.ArrayList;
 
 public class MainActivity extends AppCompatActivity {
 
     private ActivityMainBinding binding;
+    private ArrayList<Product> productsList;
+    private RecyclerView recyclerView;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -32,6 +41,6 @@ public class MainActivity extends AppCompatActivity {
         NavController navController = Navigation.findNavController(this, R.id.nav_host_fragment_activity_main);
         NavigationUI.setupActionBarWithNavController(this, navController, appBarConfiguration);
         NavigationUI.setupWithNavController(binding.navView, navController);
-    }
 
+    }
 }
