@@ -7,52 +7,36 @@ import android.view.ViewGroup;
 
 import androidx.annotation.NonNull;
 import androidx.fragment.app.Fragment;
-import androidx.lifecycle.ViewModelProvider;
-import androidx.navigation.NavController;
-import androidx.navigation.Navigation;
-import androidx.navigation.ui.AppBarConfiguration;
-import androidx.navigation.ui.NavigationUI;
-import androidx.recyclerview.widget.DefaultItemAnimator;
 import androidx.recyclerview.widget.LinearLayoutManager;
 import androidx.recyclerview.widget.RecyclerView;
 
+import com.example.lab2.Product;
 import com.example.lab2.R;
-import com.example.lab2.databinding.ActivityMainBinding;
-import com.example.lab2.databinding.FragmentRecipesBinding;
-import com.example.lab2.products.Product;
-import com.example.lab2.products.RecyclerAdapter;
-import com.example.lab2.ui.Recipes.RecipesViewModel;
-import com.google.android.material.bottomnavigation.BottomNavigationView;
+import com.example.lab2.databinding.FragmentProductsListBinding;
+import com.example.lab2.RecyclerAdapter;
 
 import java.util.ArrayList;
 
 public class ProductsListFragment extends Fragment {
-    private ArrayList<Product> productsList;
-    private RecyclerView recyclerView;
+    public RecyclerAdapter shoppingListAdapter;
+    private FragmentProductsListBinding binding;
+
     @Override
     public View onCreateView(@NonNull LayoutInflater inflater,
                              ViewGroup container, Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
-        setContentView(R.layout.activity_main);
-        recyclerView = findViewById(R.id.listView);
-        productsList = new ArrayList<>();
+        binding = FragmentProductsListBinding.inflate(inflater, container, false);
+        View root = binding.getRoot();
 
-        setUserInfo();
-        setAdapter();
+        shoppingListAdapter = new RecyclerAdapter(new ArrayList<>());
+        shoppingListAdapter.addTodo(new Product("Ogórek", false));
+        shoppingListAdapter.addTodo(new Product("Ogórek", false));
+        shoppingListAdapter.addTodo(new Product("Ogórek", false));
+        shoppingListAdapter.addTodo(new Product("Ogórek", false));
+        RecyclerView rvTodoItems = (RecyclerView) root.findViewById(R.id.rvTodoItems);
+        rvTodoItems.setAdapter(shoppingListAdapter);
+        rvTodoItems.setLayoutManager(new LinearLayoutManager(binding.getRoot().getContext()));
+
+        return root;
     }
-
-    private void setAdapter() {
-        RecyclerAdapter adapter = new RecyclerAdapter(productsList);
-        RecyclerView.LayoutManager layoutManager = new LinearLayoutManager(getApplicationContext);
-        recyclerView.setLayoutManager(layoutManager);
-        recyclerView.setItemAnimator(new DefaultItemAnimator());
-        recyclerView.setAdapter(adapter);
-    }
-
-    private void setUserInfo() {
-        productsList.add(new Product("Pomidor", false));
-        productsList.add(new Product("Ogórek", false));
-        productsList.add(new Product("Makaron", false));
-    }
-
 }

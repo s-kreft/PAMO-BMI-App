@@ -11,15 +11,21 @@ import androidx.annotation.NonNull;
 import androidx.annotation.Nullable;
 import androidx.fragment.app.Fragment;
 import androidx.lifecycle.ViewModelProvider;
+import androidx.recyclerview.widget.RecyclerView;
 
+import com.example.lab2.Product;
 import com.example.lab2.R;
+import com.example.lab2.RecyclerAdapter;
 import com.example.lab2.databinding.FragmentRecipesBinding;
 
+import java.util.ArrayList;
+import java.util.List;
 import java.util.concurrent.ThreadLocalRandom;
 
 public class RecipesFragment extends Fragment {
 
     private FragmentRecipesBinding binding;
+    private View root;
 
     private TextView recipeTextView;
 
@@ -29,7 +35,7 @@ public class RecipesFragment extends Fragment {
                 new ViewModelProvider(this).get(RecipesViewModel.class);
 
         binding = FragmentRecipesBinding.inflate(inflater, container, false);
-        View root = binding.getRoot();
+        root = binding.getRoot();
 
         //final TextView textView = binding.textDashboard;
         //dashboardViewModel.getText().observe(getViewLifecycleOwner(), textView::setText);
@@ -57,6 +63,18 @@ public class RecipesFragment extends Fragment {
                 "Łososia pokroić na porcje, odciąć skórkę, opłukać i osuszyć. Doprawić solą, pieprzem, wysmarować przeciśniętym przez praskę czosnkiem oraz 2 łyżkami oliwy.\n" +
                 "Położyć na podpieczonych batatach i piec dalej, przez kolejne 10 minut. Wyjąć naczynie z piekarnika, posypać posiekanym szczypiorkiem i podawać z sałatką z ogórka.\n" +
                 "Ogórka umyć, obrać, przekroić wzdłuż na pół, następnie na cienkie plasterki. Doprawić solą, pieprzem, śmietaną i szczypiorkiem.";
+        ArrayList<Product> ingredients1 = new ArrayList<>(List.of(
+                new Product("700 g batatów", false),
+                new Product("0,5 łyżeczki papryki", false),
+                new Product("700 g filetu z łososia", false),
+                new Product("2 ząbki czosnku", false),
+                new Product("szczypiorek", false),
+                new Product("1 ogórek szklarniowy", false),
+                new Product("2 łyżki śmietany", false),
+                new Product("sól", false),
+                new Product("pieprz", false),
+                new Product("oliwa extra", false)
+        ));
 
         String recipe2 = "RISOTTO Z KURCZAKIEM PO TOSKAŃSKU\n" + "SKŁADNIKI\n" +
                 " 2 - 3 PORCJE\n" +
@@ -86,6 +104,26 @@ public class RecipesFragment extends Fragment {
                 "Odstawić z ognia, dodać szpinak, kilkanaście liści bazylii, a także 2/3 ilości tartego parmezanu. Wymieszać, przykryć i odstawić na około 1 - 2 minuty.\n" +
                 "Wyłożyć do głębokich talerzy i posypać resztą parmezanu."
                 ;
+        ArrayList<Product> ingredients2 = new ArrayList<>(List.of(
+                new Product("1 mniejsza cebula", false),
+                new Product("1 łyżka oliwy", false),
+                new Product("2 ząbki czosnku", false),
+                new Product("1 łyżka masła", false),
+                new Product("2 ząbki czosnku", false),
+                new Product("1 łyżka masła", false),
+                new Product("1 pojedyncza pierś kurczaka", false),
+                new Product("1 łyżeczka suszonego oregano", false),
+                new Product("szczypta płatków chili", false),
+                new Product("1/3 szklanki ryżu", false),
+                new Product("1/4 szklanki białego wina", false),
+                new Product("ok. 200 g cukinii", false),
+                new Product("6 kawałków suszonych pomidorów z zalewy", false),
+                new Product("ok. 500 ml bulionu", false),
+                new Product("60 ml (1/4 szklanki) śmietanki 30%", false),
+                new Product("garść szpinaku", false),
+                new Product("1/3 szklanki tartego parmezanu", false),
+                new Product("bazylia", false)
+        ));
 
         String recipe3 = "FILETY DROBIOWE PO GRECKU\n" + "SKŁADNIKI\n" +
                 " 4 PORCJE\n" +
@@ -104,6 +142,17 @@ public class RecipesFragment extends Fragment {
                 "Kawałki kurczaka włożyć na rozgrzaną patelnię z 1 łyżką oliwy i obsmażyć z dwóch stron. Przełożyć do naczynia żaroodpornego.\n" +
                 "Posypać pokruszoną fetą, skropić całość 1/4 cytryny, obłożyć resztą cytryny pokrojoną na kawałki i polać 2 łyżkami oliwy extra.\n" +
                 "Wstawić do nagrzanego piekarnika i piec przez 15 minut. Posypać posiekaną natką pietruszki.";
+        ArrayList<Product> ingredients3 = new ArrayList<>(List.of(
+                new Product("600 g filetu kurczaka", false),
+                new Product("1 łyżeczka oregano", false),
+                new Product("1 łyżeczka wędzonej papryki (lub słodkiej)", false),
+                new Product("1 łyżeczka czosnku granulowanego", false),
+                new Product("2 łyżki zwykłej oliwy", false),
+                new Product("150 g sera feta", false),
+                new Product("1 cytryna", false),
+                new Product("2 łyżki oliwy extra", false),
+                new Product("pęczek natki pietruszki", false)
+        ));
 
         String recipe4 = "MAKARON ZE SZPARAGAMI\n" + "SKŁADNIKI\n" +
                 " 2 PORCJE\n" +
@@ -124,6 +173,17 @@ public class RecipesFragment extends Fragment {
                 "Dodać pozostałe 2 łyżki oliwy, skórkę z cytryny oraz gotowy, odcedzony makaron ze szparagami.\n" +
                 "Wymieszać, następnie doprawić solą, pieprzem i dodać posiekaną natkę pietruszki. Ponownie wymieszać w międzyczasie dodając starty ser.\n" +
                 "Wyłożyć do talerzy, doprawić solą z młynka w razie potrzeby, skropić dodatkową oliwą oraz posypać dodatkowym parmezanem.";
+        ArrayList<Product> ingredients4 = new ArrayList<>(List.of(
+                new Product("1 pęczek szparagów (500 g)", false),
+                new Product("160 g makaronu spaghetti", false),
+                new Product("4 ząbki czosnku", false),
+                new Product("4 łyżki oliwy extra", false),
+                new Product("1 łyżka soku z cytryny", false),
+                new Product("1 łyżka soku z cytryny", false),
+                new Product("pęczek natki pietruszki", false),
+                new Product("4 łyżki tartego parmezanu lub grana padano", false)
+        ));
+
 
         String recipe5 = "ZUPA KALAFIOROWA Z ZIEMNIAKAMI I MARCHEWKĄ\n" + "SKŁADNIKI\n" +
                 " 4 PORCJE\n" +
@@ -142,10 +202,26 @@ public class RecipesFragment extends Fragment {
                 "Dodać obrane i pokrojone w kosteczkę ziemniaki i znów podsmażać je przez ok. 5 - 7 minut, od czasu do czasu mieszając. Doprawić solą oraz pieprzem.\n" +
                 "Dodać świeżego kalafiora pokrojonego na małe różyczki i jeszcze przez chwilę razem podsmażać (kalafiora mrożonego dodajemy później). Wlać gorący bulion i zagotować. Przykryć i gotować przez ok. 20 minut do miękkości warzyw. W połowie tego czasu dodać mrożone różyczki kalafiora, wcześniej opłukane na sitku pod gorącą wodą.\n" +
                 "Zupę odstawić z ognia, dodać posiekany koperek i szczypiorek. Śmietanę wymieszać z kilkoma łyżkami zimnej wody, później z kilkoma łyżkami wywaru. Po zahartowaniu śmietany dodawać ją stopniowo do zupy cały czas mieszając. Podawać z pieczywem.";
+        ArrayList<Product> ingredients5 = new ArrayList<>(List.of(
+                new Product("2 łyżki oliwy", false),
+                new Product("1 łyżka masła", false),
+                new Product("1 cebula", false),
+                new Product("2 marchewki", false),
+                new Product("5 ziemniaków", false),
+                new Product("500 g kalafiora (świeżego lub mrożonego)", false),
+                new Product("1,5 litra bulionu drobiowego lub rosołu", false),
+                new Product("2 łyżki posiekanego koperku", false),
+                new Product("2 łyżki posiekanego szczypiorku", false),
+                new Product("200 g gęstej śmietany z kubka 18%", false)
+                ));
 
         String[] recipes = {recipe1, recipe2, recipe3, recipe4, recipe5};
+        ArrayList<ArrayList<Product>> ingredients = new ArrayList<>(List.of(ingredients1, ingredients2, ingredients3, ingredients4, ingredients5));
         recipeTextView = (TextView) getView().findViewById(R.id.text_recipe);
+        RecyclerView rvTodoItems = (RecyclerView) root.findViewById(R.id.rvTodoItems);
         int randomRecipe = ThreadLocalRandom.current().nextInt(recipes.length);
+        var adapter = (RecyclerAdapter)rvTodoItems.getAdapter();
+        adapter.setIngredients(ingredients.get(randomRecipe));
         recipeTextView.setText(recipes[randomRecipe]);
     }
 

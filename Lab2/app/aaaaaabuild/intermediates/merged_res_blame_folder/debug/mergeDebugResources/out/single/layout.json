@@ -1,0 +1,54 @@
+[
+    {
+        "merged": "C:\\Users\\Kapal\\.gradle\\daemon\\8.4\\com.example.lab2.app-mergeDebugResources-3:\\layout\\fragment_products_list.xml",
+        "source": "C:\\Users\\Kapal\\.gradle\\daemon\\8.4\\com.example.lab2.app-main-6:\\layout\\fragment_products_list.xml"
+    },
+    {
+        "merged": "com.example.lab2.app-mergeDebugResources-3:/layout/fragment_products_list.xml",
+        "source": "com.example.lab2.app-main-6:/layout/fragment_products_list.xml"
+    },
+    {
+        "merged": "C:\\Users\\Kapal\\.gradle\\daemon\\8.4\\com.example.lab2.app-mergeDebugResources-3:\\layout\\fragment_bmi_calculations.xml",
+        "source": "C:\\Users\\Kapal\\.gradle\\daemon\\8.4\\com.example.lab2.app-main-6:\\layout\\fragment_bmi_calculations.xml"
+    },
+    {
+        "merged": "C:\\Users\\Kapal\\.gradle\\daemon\\8.4\\com.example.lab2.app-mergeDebugResources-3:\\layout\\fragment_dashboard.xml",
+        "source": "C:\\Users\\Kapal\\.gradle\\daemon\\8.4\\com.example.lab2.app-main-6:\\layout\\fragment_dashboard.xml"
+    },
+    {
+        "merged": "C:\\Users\\Kapal\\.gradle\\daemon\\8.4\\com.example.lab2.app-mergeDebugResources-3:\\layout\\list_products.xml",
+        "source": "C:\\Users\\Kapal\\.gradle\\daemon\\8.4\\com.example.lab2.app-main-6:\\layout\\list_products.xml"
+    },
+    {
+        "merged": "com.example.lab2.app-mergeDebugResources-3:/layout/list_products.xml",
+        "source": "com.example.lab2.app-main-6:/layout/list_products.xml"
+    },
+    {
+        "merged": "C:\\Users\\Kapal\\.gradle\\daemon\\8.4\\com.example.lab2.app-mergeDebugResources-3:\\layout\\fragment_home.xml",
+        "source": "C:\\Users\\Kapal\\.gradle\\daemon\\8.4\\com.example.lab2.app-main-6:\\layout\\fragment_home.xml"
+    },
+    {
+        "merged": "C:\\Users\\Kapal\\.gradle\\daemon\\8.4\\com.example.lab2.app-mergeDebugResources-3:\\layout\\fragment_benedict.xml",
+        "source": "C:\\Users\\Kapal\\.gradle\\daemon\\8.4\\com.example.lab2.app-main-6:\\layout\\fragment_benedict.xml"
+    },
+    {
+        "merged": "C:\\Users\\Kapal\\.gradle\\daemon\\8.4\\com.example.lab2.app-mergeDebugResources-3:\\layout\\fragment_bmi.xml",
+        "source": "C:\\Users\\Kapal\\.gradle\\daemon\\8.4\\com.example.lab2.app-main-6:\\layout\\fragment_bmi.xml"
+    },
+    {
+        "merged": "C:\\Users\\Kapal\\.gradle\\daemon\\8.4\\com.example.lab2.app-mergeDebugResources-3:\\layout\\fragment_recipes.xml",
+        "source": "C:\\Users\\Kapal\\.gradle\\daemon\\8.4\\com.example.lab2.app-main-6:\\layout\\fragment_recipes.xml"
+    },
+    {
+        "merged": "com.example.lab2.app-mergeDebugResources-3:/layout/activity_main.xml",
+        "source": "com.example.lab2.app-main-6:/layout/activity_main.xml"
+    },
+    {
+        "merged": "C:\\Users\\Kapal\\.gradle\\daemon\\8.4\\com.example.lab2.app-mergeDebugResources-3:\\layout\\fragment_notifications.xml",
+        "source": "C:\\Users\\Kapal\\.gradle\\daemon\\8.4\\com.example.lab2.app-main-6:\\layout\\fragment_notifications.xml"
+    },
+    {
+        "merged": "C:\\Users\\Kapal\\.gradle\\daemon\\8.4\\com.example.lab2.app-mergeDebugResources-3:\\layout\\activity_main.xml",
+        "source": "C:\\Users\\Kapal\\.gradle\\daemon\\8.4\\com.example.lab2.app-main-6:\\layout\\activity_main.xml"
+    }
+]
